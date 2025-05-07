@@ -12,6 +12,8 @@ jobs:
       - name: Install Firebase Tools
         run: npm install -g firebase-tools
       - name: Install Dependencies
+        working-directory: functions
         run: npm install
       - name: Deploy Firebase Functions
+        working-directory: functions
         run: firebase deploy --only functions --token ${{ secrets.FIREBASE_TOKEN }}
