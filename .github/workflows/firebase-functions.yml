@@ -16,7 +16,7 @@ jobs:
         run: npm install
       - name: Set Cleanup Policy
         working-directory: functions
-        run: firebase functions:artifacts:setpolicy --token ${{ secrets.FIREBASE_TOKEN }}
+        run: firebase functions:artifacts:setpolicy --force --token ${{ secrets.FIREBASE_TOKEN }}
       - name: Deploy Firebase Functions
         working-directory: functions
         run: firebase deploy --only functions --force --token ${{ secrets.FIREBASE_TOKEN }}
